@@ -34,7 +34,7 @@ class UsersController extends Controller
             return redirect('/logout');
         endif;
         
-        $users = User::orderBy('created_at','desc')->paginate(2);
+        $users = User::orderBy('created_at','desc')->paginate(20);
         return view('Admin.Users.index')->with([
             'users' => $users
         ]);

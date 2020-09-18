@@ -27,7 +27,7 @@
 
 -   18 Sep 2020
 1.  Added 'Public' page added 'PagesController' and the public request will go throught the PagesController
-2.  add key on vim nnoremap <leader>pp "+p for copy a long text from anywhere! Vola!! 
+2.  add key on vim `nnoremap <leader>pp "+p` for copy a long text from anywhere! Vola!! 
 
 
 

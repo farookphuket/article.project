@@ -15,9 +15,11 @@ class PagesController extends Controller
      */
     public function index()
     {
-        echo"this is page admin";
+        $page = Page::all();
+        return view('Admin.Pages.index'); 
     }
 
+    
     /**
      * Show the form for creating a new resource.
      *

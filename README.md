@@ -6,7 +6,13 @@
 
 
 
+-   20 Sep 2020 
+1. update Pages 
 
+
+
+
+---
 -   date 19 Sep 2020
 1.  update my .vimrc and .tmux.conf
 

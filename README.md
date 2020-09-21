@@ -20,7 +20,7 @@ to let user choose his post wheather to public or just keep it to himself.
 
 function xxs_clean($tag){
     $bad = array("<script>","</script>");
-    $replace = array("&lt;script&gt;","&lt;/script&ly;");
+    $replace = array("&lt;script&gt;","&lt;/script&gt;");
 
     return str_replace($bad,$replace,$tag);
 }

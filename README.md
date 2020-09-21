@@ -5,6 +5,70 @@
 > created on 16 Sep 2020
 
 
+- date 21 Sep 2020
+1.  change table what_news added "is_public" field 
+to let user choose his post wheather to public or just keep it to himself.
+2.  admin will landing on what_news page
+3.  added helpers.php just to clean javascript from user 
+
+
+
+>   create file "app/helpers.php" and put the code in it
+
+```
+<?php 
+
+function xxs_clean($tag){
+    $bad = array("<script>","</script>");
+    $replace = array("&lt;script&gt;","&lt;/script&ly;");
+
+    return str_replace($bad,$replace,$tag);
+}
+
+
+
+?>
+
+```
+
+
+>  open file "composer.json" then add the code in the autoload section 
+
+
+
+```
+"files":[
+    "app/helpers.php"
+]
+```
+
+
+>   your "autoload" should look like this 
+
+```
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ],
+
+        "files" :[
+            "app/helpers.php"
+        ]
+    },
+
+```
+
+
+
+>   now run `composer dump-autoload` and you're good to go
+
+
+---
 
 -   20 Sep 2020 
 1. update Pages and readme file 

@@ -18,6 +18,7 @@ class CreateWhatNewsTable extends Migration
             $table->integer('user_id');
             $table->string('title');
             $table->text('body');
+            $table->boolean('is_public');
             $table->timestamps();
         });
     }

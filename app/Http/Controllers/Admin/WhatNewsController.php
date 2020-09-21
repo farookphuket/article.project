@@ -19,7 +19,9 @@ class WhatNewsController extends Controller
      */
     public function index()
     {
-        $wn = WhatNews::orderBy('created_at','desc')->paginate(10);
+        $wn = WhatNews::where('is_public',1)
+            ->orWhere('user_id',Auth::user()->id)
+            ->orderBy('created_at','desc')->paginate(10);
         return view('Admin.WhatNews.index')->with([
             'whatnews' => $wn
         ]);
@@ -48,6 +50,7 @@ class WhatNewsController extends Controller
         $wn->user_id = Auth::user()->id;
         $wn->title = $request->title;
         $wn->body = $request->body;
+        $wn->is_public = isset($request->is_public[0])?1:0;
         $wn->save();
 
         return redirect('/admin/whatnews/')->with(Session::flash('success','your post has been save'));

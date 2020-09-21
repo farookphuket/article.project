@@ -36,7 +36,7 @@ class WhatNewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
@@ -58,7 +58,7 @@ class WhatNewsController extends Controller
      */
     public function edit(WhatNews $whatNews)
     {
-        //
+        echo"this is what news edit";
     }
 
     /**

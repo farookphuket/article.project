@@ -28,6 +28,13 @@
                 <label>text body</label>
                 <textarea class="form-control body" name="body"></textarea> 
             </div>
+
+            <div class="form-group pt-4">
+                    <label class="alert alert-warning">
+                        <input type="checkbox" class="form-control is_public" name="is_public"> 
+                        show public? if you leave un-check your post will not visible to public
+                    </label>
+            </div>
                         
             <div class="btn-group float-right">
                 <button class="btn btn-primary" type="submit">Save</button>

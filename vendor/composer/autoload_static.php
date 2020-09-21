@@ -34,6 +34,7 @@ class ComposerStaticInite256b32fd02cb8c5058696f31fe9ac24
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        'b4e3f29b106af37a2bb239f73cdf68c7' => __DIR__ . '/../..' . '/app/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -500,6 +501,7 @@ class ComposerStaticInite256b32fd02cb8c5058696f31fe9ac24
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\PagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PagesController.php',
         'App\\Http\\Controllers\\Admin\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UsersController.php',
+        'App\\Http\\Controllers\\Admin\\WhatNewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/WhatNewsController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -510,7 +512,9 @@ class ComposerStaticInite256b32fd02cb8c5058696f31fe9ac24
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\Moderate\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Moderate/HomeController.php',
         'App\\Http\\Controllers\\Moderate\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Moderate/UsersController.php',
+        'App\\Http\\Controllers\\Moderate\\WhatNewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Moderate/WhatNewsController.php',
         'App\\Http\\Controllers\\PagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/PagesController.php',
+        'App\\Http\\Controllers\\WhatNewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/WhatNewsController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',

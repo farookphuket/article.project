@@ -40,6 +40,11 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:admi
 Route::namespace('Moderate')->prefix('moderate')->name('moderate.')->middleware('can:mod-user')->group(function(){
 
     Route::resource('/home','HomeController');
+    Route::resource('/home/{id}/edit','HomeController@edit');
+    Route::resource('/home/{id}','HomeController@destroy');
+    Route::resource('/whatnews','WhatNewsController');
+
+    Route::post('/whatnews','WhatNewsController@store');
     Route::resource('/users','UsersController');
     Route::resource('/users/{id}/edit','UsersController@edit');
     Route::post('/users/{id}/update','UsersController@update');

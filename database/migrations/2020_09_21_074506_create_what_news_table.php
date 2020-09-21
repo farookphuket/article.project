@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePagesTable extends Migration
+class CreateWhatNewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreatePagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('what_news', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
-            $table->boolean('is_public');
-            $table->string('page_title');
-            $table->text('page_summary');
-            $table->text('page_body');
+            $table->string('title');
+            $table->text('body');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreatePagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pages');
+        Schema::dropIfExists('what_news');
     }
 }

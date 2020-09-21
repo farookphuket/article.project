@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Moderate;
 
 use App\Http\Controllers\Controller;
-use App\Page;
+use App\WhatNews;
 use Illuminate\Http\Request;
 
-class PagesController extends Controller
+class WhatNewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,9 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $page = Page::all();
-        return view('Admin.Pages.index'); 
+        //
     }
 
-    
     /**
      * Show the form for creating a new resource.
      *
@@ -44,10 +42,10 @@ class PagesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Page  $page
+     * @param  \App\WhatNews  $whatNews
      * @return \Illuminate\Http\Response
      */
-    public function show(Page $page)
+    public function show(WhatNews $whatNews)
     {
         //
     }
@@ -55,10 +53,10 @@ class PagesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Page  $page
+     * @param  \App\WhatNews  $whatNews
      * @return \Illuminate\Http\Response
      */
-    public function edit(Page $page)
+    public function edit(WhatNews $whatNews)
     {
         //
     }
@@ -67,10 +65,10 @@ class PagesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Page  $page
+     * @param  \App\WhatNews  $whatNews
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page)
+    public function update(Request $request, WhatNews $whatNews)
     {
         //
     }
@@ -78,10 +76,10 @@ class PagesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Page  $page
+     * @param  \App\WhatNews  $whatNews
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Page $page)
+    public function destroy(WhatNews $whatNews)
     {
         //
     }

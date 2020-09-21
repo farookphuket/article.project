@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 
+@section("meta_title","Manage pages ".Auth::user()->name)
 @section('content')
     <div class="row">
         <div class="col-lg-12">

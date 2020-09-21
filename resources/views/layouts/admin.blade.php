@@ -23,6 +23,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('tag_in_head')
 </head>
 <body>
     @include('layouts.admin_menu')

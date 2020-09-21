@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Page;
+use App\WhatNews;
+use App\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
-class PagesController extends Controller
+class WhatNewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +19,12 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $page = Page::all();
-        return view('Admin.Pages.index'); 
+        $wn = WhatNews::orderBy('created_at','desc')->paginate(10);
+        return view('Admin.WhatNews.index')->with([
+            'whatnews' => $wn
+        ]);
     }
 
-    
     /**
      * Show the form for creating a new resource.
      *
@@ -38,16 +43,24 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $wn = new WhatNews();
+        $wn->user_id = Auth::user()->id;
+        $wn->title = $request->title;
+        $wn->body = $request->body;
+        $wn->save();
+
+        return redirect('/admin/whatnews/')->with(Session::flash('success','your post has been save'));
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Page  $page
+     * @param  \App\WhatNews  $whatNews
      * @return \Illuminate\Http\Response
      */
-    public function show(Page $page)
+    public function show(WhatNews $whatNews)
     {
         //
     }
@@ -55,10 +68,10 @@ class PagesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Page  $page
+     * @param  \App\WhatNews  $whatNews
      * @return \Illuminate\Http\Response
      */
-    public function edit(Page $page)
+    public function edit(WhatNews $whatNews)
     {
         //
     }
@@ -67,10 +80,10 @@ class PagesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Page  $page
+     * @param  \App\WhatNews  $whatNews
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page)
+    public function update(Request $request, WhatNews $whatNews)
     {
         //
     }
@@ -78,10 +91,10 @@ class PagesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Page  $page
+     * @param  \App\WhatNews  $whatNews
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Page $page)
+    public function destroy(WhatNews $whatNews)
     {
         //
     }

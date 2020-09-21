@@ -59,4 +59,8 @@ class User extends Authenticatable
         endif;
         return false;
     }
+
+    public function whatnews(){
+        return $this->hasMany('App\WhatNews');
+    }
 }

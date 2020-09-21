@@ -53,7 +53,7 @@ class LoginController extends Controller
 
         $user = User::where('id',Auth::user()->id)->first();
         if($user->hasRole('admin')):
-            $url = '/admin/users';
+            $url = '/admin/whatnews';
         endif;
         if($user->hasRole('moderate')):
             $url = '/moderate/home';

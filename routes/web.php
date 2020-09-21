@@ -26,6 +26,10 @@ Route::put('/home/{id}/update', 'HomeController@update')->name('home.update');
 Route::delete('/home/{id}', 'HomeController@destroy')->name('home.destroy');
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:admin-user')->group(function(){
+    Route::resource('/whatnews','WhatNewsController');
+    Route::post('/whatnews','WhatNewsController@store');
+
+
     Route::resource('/users','UsersController');
     Route::resource('/users/{id}/edit','UsersController@edit');
     Route::post('/users/{id}/update','UsersController@update');

@@ -14,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','PagesController@index');
-
-
 Route::get('/logout','\App\Http\Controllers\Auth\LoginController@logout');
+
+
+
+
+
 
 
 Auth::routes();
@@ -24,6 +27,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::put('/home/{id}/update', 'HomeController@update')->name('home.update');
 Route::delete('/home/{id}', 'HomeController@destroy')->name('home.destroy');
+
+
+Route::namespace("Member")->prefix("member")->name('member.')->middleware('can:member-user')->group(function(){
+    
+    Route::resource("/home","HomeController");
+});
+
+
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:admin-user')->group(function(){
     Route::resource('/whatnews','WhatNewsController');

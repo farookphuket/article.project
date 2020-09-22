@@ -33,6 +33,10 @@ class AppServiceProvider extends ServiceProvider
             return $user->hasRole('moderate');
         });
 
+        Gate::define('member-user',function($user){
+            return $user->hasRole('member');
+        });
+
         Gate::define('edit-admin',function($user){
             return $user->hasRole('admin');
         });

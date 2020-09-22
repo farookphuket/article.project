@@ -7,6 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel='icon' href='{{asset("favicon.ico")}}' type='image/x-icon'/ >
     <title>
         @yield('meta_title')
     </title>
@@ -23,6 +24,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom_theme.css') }}" rel="stylesheet">
     @yield('tag_in_head')
 </head>
 <body>

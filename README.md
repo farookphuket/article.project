@@ -4,7 +4,12 @@
 > article.project is the laravel base using sqlite database.
 > created on 16 Sep 2020
 
+---
+-   date 22 Sep 2020
+1.  added Member\HomeController for member landing page
+2.  Added favicon `<link rel='icon' href="{{asset('favicon')}}" type="image/x-icon" />` it's show error said "cannot show image as it is some error " so you have to give a permission to access to file `sudo chmod 777 -R XXX` (As XXX is your project folder path)so now you will get the web icon to show 
 
+---
 - date 21 Sep 2020
 1.  change table what_news added "is_public" field 
 to let user choose his post wheather to public or just keep it to himself.

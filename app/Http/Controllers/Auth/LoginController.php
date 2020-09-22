@@ -49,7 +49,7 @@ class LoginController extends Controller
 
 
     public function redirectTo(){
-        $url = '/home';
+        $url = '/member/home';
 
         $user = User::where('id',Auth::user()->id)->first();
         if($user->hasRole('admin')):

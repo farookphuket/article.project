@@ -6,58 +6,21 @@
 /*
  *     Created on : May 28, 2016, 12:12:13 PM
  *         Author     : farook
- *         */
-
-/*
- *     form css-grid
- *
- *
- *     #showcase{
- *         min-height:450px;
- *             color:#ffffff;
- *                 text-align: center;
- *                 }
- *
- *                 #showcase .bg-image{
- *                     position: absolute;
- *                         background: #333 url('../img/bg-test1.png');
- *                             background-position: center;
- *                                 background-repeat: no-repeat;
- *                                     background-size: cover;
- *                                         width: 100%;
- *                                             height: 450px;
- *                                             }
- *
- *
- *
- *
- *                                                 end showcase
- *                                                 */
-/*
- * comment Tue 16 oct 2018
- * body{
- *     
- *         background:#000000 url("../img/bg-2.jpg");
- *             background-repeat:no-repeat;
- *                 background-attachment: fixed;
- *                     display: compact;
- *                         -moz-background-size: cover;
- *                             -webkit-background-size: cover;
- *                                 -o-background-size: cover;
- *                                     background-size: cover;
- *                                         
- *                                         }
- *                                         */
-
-.jumbotron{
-    background: #333 url("../img/bg-test1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-background-size: cover;
-    color: #e3e3e3;
+ *         
+ **/
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
 nav ul,li{
     font-size:15px;
     font-weight: bold;
@@ -167,111 +130,6 @@ section {
 
 
 
-#showcase .content-wrap,
-#section-c .content-wrap{
-    padding: 0 1.05em;
-
-}
-
-.content-wrap{
-    padding: 0 1.07em;
-
-}
-.content-wrap a:link,a:visited{
-    color:#1b6d85;
-    text-decoration: none;
-    font-weight: bolder;
-
-}
-.show-list ul{
-    list-style: none;
-    padding: 0;
-    margin:0;
-
-}
-.show-list li{
-    margin-bottom: 1em;
-    background: #fff;
-    color: #333;
-
-}
-#section-b,
-#section-c{
-    padding: 2em 1em 1em;
-
-}
-
-#section-c h1,h2,h3{
-    padding-top:20px;
-
-
-}
-#section-b ul,
-#section-c ul{
-    list-style: none;
-    padding: 0;
-    margin:0;
-
-}
-#section-b li{
-    margin-bottom: 1em;
-    background: #fff;
-    color: #333;
-
-}
-
-.btn-pay{
-    display: inline-block;
-    background: #333;
-    color:rgb(27, 15, 15);
-    border: 1px solid #666;
-    text-decoration: none;
-    padding: 1em 2em;
-    margin: .5em 0;
-
-
-}
-
-
-
-.btn-pay:hover{
-    background: #eaeaea;
-    color:#B98CC3;
-
-}
-.card-content{
-    padding: 1.5em;
-
-}
-
-/*tour program display start */
-
-
-.modal-body >form{
-    padding-top:15px;
-
-}
-
-.term_of_use > p{
-    text-align: right;
-
-}
-
-.read_more{
-    padding:45px;
-
-}
-.modal-dialog{
-    width : 85%;
-    position : center;
-
-}
-.modalWarning{
-    padding : 25px;
-    border : 1px #E13300 outset;
-    border-radius: 15px;
-
-}
 
 /*
  * Bootstrap 4 set modal box
@@ -334,47 +192,6 @@ section {
     display:none;
     border:4px solid #ff0000;
 
-
-}
-
-/*
- *         form_req create on Tue 17-july-2018
- *
- *         */
-.form_req{
-    padding-top:10px;
-
-
-}
-
-.form_req ul,
-.form_req ol{
-    padding: 0 2.05em;
-
-
-}
-
-
-/*
- * This is line edit on Sat-3-Sep-2016
- * This will appear to be the link user can click then the javascript will toggle the form on the page
- *
- * */
-
-span.showForm{
-    cursor:pointer;
-    font-weight:bold;
-    font-size:1em;
-    color:green;
-    text-decoration:none;
-
-}
-h1.showForm{
-    cursor:pointer;
-    font-weight:bold;
-    font-size:2em;
-    color:blue;
-    text-decoration:none;
 
 }
 
@@ -453,73 +270,6 @@ border-radius:8px;
 
 
 
-.confTitle{
-    background:red;
-    color:white;
-    margin:4px;
-    padding:2px;
-    text-align:center;
-
-
-}
-
-/*
- * This style for show the article
- * Fri-13-Jan-2017
- *
- * */
-.box_border{
-    border:1px dotted #000000;
-    padding:15px;
-    border-radius:25px;
-
-
-}
-.article_box{
-    border:1px dotted #B98CC3;
-    background-color:#E6ECDC;
-    padding:25px;
-    color:green;
-
-}
-
-
-.article_box a:link , a:visited{
-    color:red;
-    float:right;
-    position:absolute;
-    bottom:25px;
-    right:55px;
-
-}
-.article_box a:hover{
-    color:green;
-    background-color:#000000;
-    border:2px dashed #ff0000;
-    padding:5px;
-    font-weight:bold;
-    font-size:16px;
-
-
-}
-.box_bottom{
-    float:right;
-    position:absolute;
-    bottom:2px;
-    left:25px;
-    padding:2px;
-
-    background-color:#ECE2E3;
-
-}
-
-
-/*
- *
- * set the footer to be fixed at the bottom of page
- * Add this line on Fri-11-Aug-2017
- * */
-
 
 /* Sticky footer styles
  * -------------------------------------------------- */
@@ -586,6 +336,3 @@ body {
 
 }
 
-* }
-*                 }
-*     }

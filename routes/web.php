@@ -32,6 +32,10 @@ Route::delete('/home/{id}', 'HomeController@destroy')->name('home.destroy');
 Route::namespace("Member")->prefix("member")->name('member.')->middleware('can:member-user')->group(function(){
     
     Route::resource("/home","HomeController");
+    Route::resource("/home/{id}/edit","HomeController@edit");
+    Route::post("/home/store","HomeController@store");
+    Route::put("/home/{id}/update","HomeController@update");
+    Route::delete("/home/{id}","HomeController@destroy");
 });
 
 
@@ -39,6 +43,9 @@ Route::namespace("Member")->prefix("member")->name('member.')->middleware('can:m
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:admin-user')->group(function(){
     Route::resource('/whatnews','WhatNewsController');
     Route::post('/whatnews','WhatNewsController@store');
+    Route::resource('/whatnews/{id}/edit','WhatNewsController@edit');
+    Route::put('/whatnews/{id}/update','WhatNewsController@update');
+    Route::delete('/whatnews/{id}/destroy','WhatNewsController@destroy');
 
 
     Route::resource('/users','UsersController');

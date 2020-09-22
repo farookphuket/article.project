@@ -19,6 +19,15 @@ class PagesController extends Controller
                         ->orderBy("created_at","desc")
                         ->paginate(20);
 
-        return view('Public.index')->with('whatnews',$wn);
+
+        $meta_title = WhatNews::where("is_public",1)
+                            ->orderBy('created_at','desc')
+                            ->latest()
+                            ->first();
+
+        return view('Public.index')->with([
+            'meta_title' => $meta_title->title,
+            'whatnews'=>$wn
+        ]);
     }
 }

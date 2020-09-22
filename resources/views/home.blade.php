@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.member')
 
 @section('meta_title',"hi ".Auth::user()->name." how are you today?")
 @section('content')

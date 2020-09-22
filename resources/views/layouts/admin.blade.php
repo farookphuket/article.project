@@ -12,11 +12,13 @@
         @yield('meta_title')
     </title>
 
+    @include('INC.prism')
+    @include('INC.hljs')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery.js') }}"></script>
 
-    @include("INC/jodit")
+    @include("INC/jodit3")
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

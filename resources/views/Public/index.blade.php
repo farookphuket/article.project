@@ -1,6 +1,6 @@
 @extends('layouts.pub')
 
-@section('meta_title',"hi friends, how's going on?")
+@section('meta_title',isset($meta_title)?$meta_title:"welcome friends ")
 @section('content')
     <div class="row ">
         <div class="col-lg-12 pt-4">

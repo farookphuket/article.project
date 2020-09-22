@@ -74,9 +74,10 @@ class WhatNewsController extends Controller
      * @param  \App\WhatNews  $whatNews
      * @return \Illuminate\Http\Response
      */
-    public function edit(WhatNews $whatNews)
+    public function edit($id)
     {
-        //
+        $wn = WhatNews::findOrFail($id);
+        return view("Admin.WhatNews.edit")->with('whatnews',$wn);
     }
 
     /**
@@ -86,9 +87,17 @@ class WhatNewsController extends Controller
      * @param  \App\WhatNews  $whatNews
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, WhatNews $whatNews)
+    public function update(Request $request, $id)
     {
-        //
+        $wn = WhatNews::findOrFail($id);
+        $wn->user_id = Auth::user()->id;
+        $wn->title = $request->title;
+        $wn->body = $request->body;
+        $wn->is_public = isset($request->is_public[0])?1:0;
+        $wn->updated_at = Carbon::now();
+        $wn->save();
+        
+        return redirect('/admin/whatnews/')->with(Session::flash('success','your post has been updated!'));
     }
 
     /**
@@ -99,6 +108,10 @@ class WhatNewsController extends Controller
      */
     public function destroy(WhatNews $whatNews)
     {
-        //
+        
+        $wn = WhatNews::findOrFail($id);
+        $wn->delete();
+
+        return redirect('/admin/whatnews/')->with(Session::flash('success','your post has been deleted!'));
     }
 }

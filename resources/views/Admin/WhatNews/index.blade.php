@@ -5,7 +5,7 @@
 
 <script type="text/javascript">
     $(function(){
-        let j1 = new Jodit('.body',{"height":550,"placeholder":"test type"});
+        let j1 = new Jodit('.body',{"height":550,"placeholder":"test type","theme":"summer"});
     });
 </script>
     
@@ -62,6 +62,14 @@
                 <p class="pt-2" style="text-align:center;font-weight:bold;color:gray;">
                     {{$item->created_at}} {{$item->created_at->diffForHumans()}}
                 </p>
+                <div class="btn-group float-right">
+                    <a href="{{route('admin.whatnews.edit',$item->id)}}" class="btn btn-primary">Edit</a>
+                    <form action="{{route("admin.whatnews.destroy",$item->id)}}" class="form" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger" type="submit">delete</button>
+                    </form>
+                </div>
             </li>
             
         @endforeach

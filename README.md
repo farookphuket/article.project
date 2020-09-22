@@ -4,10 +4,33 @@
 > article.project is the laravel base using sqlite database.
 > created on 16 Sep 2020
 
+
+##  NOTE 
+
+-   every little thing n this file if it right after or below the line is a new thing it is may or may-not concern to the thing above the line!
+
+
+
+
+## Step I walk throught
+
+---
+
+-   date 23 Sep 2020 
+
+1.  Added `body_import_js.blade.php`  to hopfully will group js file call in one place
+for easy if later need to edit
+
+
+
 ---
 -   date 22 Sep 2020
 1.  added Member\HomeController for member landing page
 2.  Added favicon `<link rel='icon' href="{{asset('favicon')}}" type="image/x-icon" />` it's show error said "cannot show image as it is some error " so you have to give a permission to access to file `sudo chmod 777 -R XXX` (As XXX is your project folder path)so now you will get the web icon to show 
+3.  Added the hljs and prim for the beauty printing out source code on the webpage 
+checkout (prism):www.prismjs.com 
+
+
 
 ---
 - date 21 Sep 2020
@@ -17,6 +40,15 @@ to let user choose his post wheather to public or just keep it to himself.
 3.  added helpers.php just to clean javascript from user 
 
 
+
+
+
+
+---
+
+
+
+#   the step
 
 >   create file "app/helpers.php" and put the code in it
 

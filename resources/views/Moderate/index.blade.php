@@ -97,8 +97,13 @@
 
 
                         <p style="text-align:center;color:gray;font-weight:bold;">
-                            {{$item->created_at}}  {{$item->created_at->diffForHumans()}}
+                          created  {{$item->created_at}}  {{$item->created_at->diffForHumans()}}
 
+                        @if($item->updated_at != $item->created_at)
+                            <span style="text-align:right;color:blue;font-weight:bold;">
+                              updated  {{$item->updated_at}} {{$item->updated_at->diffForHumans()}}
+                            </span>
+                        @endif
                         </p>
                     </li>
                 @endforeach

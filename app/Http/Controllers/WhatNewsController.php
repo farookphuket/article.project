@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\WhatNews;
+use App\User;
+
+use Illuminate\Support\Facaded\Auth;
 use Illuminate\Http\Request;
 
 class WhatNewsController extends Controller
@@ -14,7 +17,11 @@ class WhatNewsController extends Controller
      */
     public function index()
     {
-        //
+        echo"what new!";
+    }
+
+    public function member(){
+        echo"meber place";
     }
 
     /**

@@ -12,14 +12,9 @@
         @yield('meta_title')
     </title>
 
-    @include('INC.prism')
-    @include('INC.hljs')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/jquery.js') }}"></script>
-
-    @include("INC/jodit3")
-
+    @include("INC/head_import_css")
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -42,5 +37,6 @@
         @yield('content')
     </div>
     
+    @include("INC/body_import_js")    
 </body>
 </html>

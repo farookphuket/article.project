@@ -1,20 +1,10 @@
-
-
-
-
 <!-- css path -->
-<!--
-<link href="{{asset("hlls/prism/prism.css")}}" rel="stylesheet">
--->
 
 <link href="{{asset("hlls/hljs.css")}}" rel="stylesheet">
 <link href="{{asset("hlls/style.css")}}" rel="stylesheet">
 
 
 <!-- javascript path -->
-<!--
-<script type="text/javascript" src="{{asset("hlls/prism/prism.js")}}"></script>
--->
 <script type="text/javascript" src="{{asset("hlls/hljs.js")}}"></script>
 
 <script type="text/javascript" src="{{asset("hlls/hljs-line-numbers.js")}}"></script>

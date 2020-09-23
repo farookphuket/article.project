@@ -18,9 +18,9 @@
 
 -   date 23 Sep 2020 
 
-1.  Added `body_import_js.blade.php`  to hopfully will group js file call in one place
+1.  Added `body_import_js.blade.php` `head_import_css.blade.php`  to hopfully will group js file call in one place
 for easy if later need to edit
-
+2.  change theme prim from prism-dark to prim-cody.css will fixed the problem of edit with jodit editor great work Dude Vola!!
 
 
 ---

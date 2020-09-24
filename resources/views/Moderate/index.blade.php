@@ -72,6 +72,7 @@
                         {!!$item->body!!}
 
                         <p class="pt-4">&nbsp;</p>
+                        
                         @if($item->user_id == Auth::user()->id)
 
                             @if($item->is_public != 1)
@@ -92,6 +93,10 @@
                                     @method('DELETE')
                                     <button class="btn btn-danger" type="submit">Delete</button>
                                 </form>
+                            </div>
+                        @else
+                            <div class="btn-group">
+                                <a href="{{route("moderate.home.edit",$item->id)}}" class="btn btn-primary">Moderate Edit</a>
                             </div>
                         @endif
 

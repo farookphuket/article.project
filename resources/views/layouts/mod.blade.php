@@ -15,7 +15,9 @@
     <!-- Scripts -->
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    @include('INC/jodit')
+
+
+    @include("INC/head_import_css")
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -25,8 +27,6 @@
     <link href="{{ asset('css/custom_theme.css') }}" rel="stylesheet">
     @yield('tag_in_head')
 
-    @include('INC/hljs')
-    @include('INC/prism')
 </head>
 <body>
 
@@ -42,5 +42,6 @@
         @yield('content')
     </div>
     
+    @include("INC/body_import_js")    
 </body>
 </html>

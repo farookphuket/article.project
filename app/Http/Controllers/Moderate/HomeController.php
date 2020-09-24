@@ -52,7 +52,7 @@ class HomeController extends Controller
         $wn = new WhatNews();
         $wn->user_id = Auth::user()->id;
         $wn->title = strip_tags($request->title);
-        $wn->body = str_replace('<script>','&lt;script&gt;',$request->body);
+        $wn->body = xxs_clean($request->body);
         $wn->is_public = isset($request->is_public[0])?1:0;
         $wn->save();
 

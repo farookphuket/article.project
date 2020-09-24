@@ -7,12 +7,31 @@
        
 
         let my_name = "{!!Auth::user()->name!!}";
-        
+        let $title = $(".title");
+        let today = "{!!date("d-m-Y")!!}";
+        let $frm = $(".form");
+        let orgTitle = $title.val();
+        let orgBody = $(".body").val();
+        let msgTitleAppend = `${orgTitle}[updated by ${my_name}]`;        
+        let msgBodyAppend = `${orgBody} <div class="col-lg-4"><p class="pt-4">
+
+        Updated by ${my_name} on ${today}
+         </p></div>`;
         let user_msg = `Hi ,${my_name} what's going on today?`;
         let j1 = new Jodit(".body",{
             "height":450,"placeholder":user_msg
         });
+
+
+
+
+        $frm.on("mouseenter",function(){
+            $title.val(msgTitleAppend);
+            //j1.value = msgBodyAppend;
+        });
+
     });
+
 </script>
 @endsection
 @section('content')

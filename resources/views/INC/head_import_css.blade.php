@@ -11,7 +11,7 @@
 
 
 <!-- prism css -->
-<link href="{{asset("prism/prism-cody.css")}}" rel="stylesheet">
+<link href="{{asset("prism/prism-funky.css")}}" rel="stylesheet">
 
 
 <!-- jodit -->

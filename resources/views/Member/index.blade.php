@@ -42,7 +42,8 @@
             </form>
             </div>
             <p class="pt-4">&nbsp;</p>
-            @if($whatnews)
+
+            @if(!$whatnews->isEmpty())
                 <ol class="list-group">
                     @foreach($whatnews as $item)
                         <li class="list-group-item">
@@ -82,9 +83,13 @@
                             @endif
                         </li>
                         @endforeach
-                </ol>
 
+                </ol>
             @else
+            <div class="text-center pt-4 mb-4">
+                @include('layouts.no_data')
+            </div>
+            
             <div class="card pt-4">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 

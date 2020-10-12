@@ -10,7 +10,7 @@
             </p>
             
             <ol class="list-group">
-                @if($whatnews)            
+                @if(!$whatnews->isEmpty())            
                     @foreach($whatnews as $item)
                        <li class="list-group-item">
                             <div class="col-lg-12">
@@ -28,11 +28,13 @@
                        
                     @endforeach
                 @else
-                <li class="list-group-item">
-                    <img src="https://camo.githubusercontent.com/6d61cc63b77e9169131ea89c4cfd5ef5352f3546/68747470733a2f2f692e70696e696d672e636f6d2f353634782f63342f38322f38632f63343832386332383265636464633237643339346432623165646536376534352e6a7067" class="responsive">
-                    <p class="text-center">Am I sexy enough?</p>
-                </li>
+
+                    <li class="list-group-item pt-4 mb-4 text-center">
+                        @include('layouts.no_data')
+                    </li>
+
                 @endif
+
             </ol>
         </div>
     </div>

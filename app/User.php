@@ -63,4 +63,7 @@ class User extends Authenticatable
     public function whatnews(){
         return $this->hasMany('App\WhatNews');
     }
+    public function pages(){
+        return $this->hasMany(Page::class);
+    }
 }

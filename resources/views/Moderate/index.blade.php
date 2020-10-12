@@ -59,7 +59,7 @@
         <div class="col-lg-12 pt-4">
             
             <ul class="list-group">
-                
+        @if(!$whatnews->isEmpty())                
                 @foreach($whatnews as $item)
                     <li class="list-group-item">
                         <h3 class="text-center">
@@ -86,7 +86,7 @@
                             @endif
 
                             <div class="btn-group mb-4 float-right">
-                                <a href="{{url("/moderate/home/".$item->id."/edit")}}" class="btn btn-primary">Edit</a>
+                                <a href="{{route('moderate.home.edit',$item->id)}}" class="btn btn-primary">Edit</a>
                                 <form action="{{route("moderate.home.destroy",$item->id)}}" class="form" method="post">
                                     @csrf
                                     @method('DELETE')
@@ -107,6 +107,12 @@
                         </p>
                     </li>
                 @endforeach
+                @else
+                    <li class="list-group-item text-center pt-4 mb-4">
+                      @include('layouts.no_data') 
+                    </li>
+                    
+                @endif
 
             </ul>
         </div>

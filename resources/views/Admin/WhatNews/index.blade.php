@@ -49,6 +49,7 @@
             &nbsp;
         </h1>
         <ul class="list-group">
+        @if(!$whatnews->isEmpty())
         @foreach($whatnews as $item)        
             <li class="list-group-item">
                 <h3 class="text-center">
@@ -73,6 +74,12 @@
             </li>
             
         @endforeach
+        @else
+            <li class="list-group-item pt-4 mb-4 text-center">
+@include('layouts.no_data')
+            </li>
+            
+        @endif
         </ul>
     </div>
     

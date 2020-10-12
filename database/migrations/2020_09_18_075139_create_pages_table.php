@@ -16,10 +16,11 @@ class CreatePagesTable extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
-            $table->boolean('is_public');
+            $table->string('page_slug');
             $table->string('page_title');
             $table->text('page_summary');
             $table->text('page_body');
+            $table->boolean('is_public');
             $table->timestamps();
         });
     }

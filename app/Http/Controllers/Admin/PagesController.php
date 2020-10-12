@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Auth;
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use App\Page;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PagesController extends Controller
 {
@@ -15,8 +18,12 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $page = Page::all();
-        return view('Admin.Pages.index'); 
+        $pages = Page::where('is_public',1)
+                                ->orWhere('user_id',Auth::user()->id)
+                                ->orderBy('created_at','desc')
+                                ->paginate(17);
+        //dd($pages);
+        return view('Admin.Pages.index',['pages'=> $pages]); 
     }
 
     
@@ -38,7 +45,15 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $p = new Page();
+        $p->page_title = $request->page_title;
+        $p->user_id = Auth::user()->id;
+        $p->is_public = isset($request->is_public[0])?1:0;
+        $p->page_slug = $request->page_slug;
+        $p->page_summary = $request->page_summary;
+        $p->page_body = $request->page_body;
+        $p->save();
+        return redirect("admin/pages")->with(Session::flash('success','your page has been created!'));
     }
 
     /**
@@ -60,7 +75,7 @@ class PagesController extends Controller
      */
     public function edit(Page $page)
     {
-        //
+        return view('Admin.Pages.edit')->with(['page' => $page]);
     }
 
     /**
@@ -70,9 +85,20 @@ class PagesController extends Controller
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page)
+    public function update(Request $request, $id)
     {
         //
+
+        $p = Page::findOrFail($id);
+        $p->user_id = Auth::user()->id;
+        $p->page_slug = $request->page_slug;
+        $p->is_public = isset($request->is_public[0])?1:0;
+        $p->page_slug = $request->page_slug;
+        $p->page_summary = $request->page_summary;
+        $p->page_body = $request->page_body;
+        $p->updated_at = Carbon::now();
+        $p->save();
+        return redirect('admin/pages')->with(Session::flash('warning','your page has been updated!'));
     }
 
     /**
@@ -84,5 +110,7 @@ class PagesController extends Controller
     public function destroy(Page $page)
     {
         //
+        $page->delete();
+        return redirect('admin/pages')->with(Session::flash('success','your page has been remove!'));
     }
 }

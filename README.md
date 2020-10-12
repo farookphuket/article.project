@@ -15,6 +15,11 @@
 ## Step I walk throught
 
 ---
+-   date 12 Oct 2020
+1.  update "Page" add,edit,delete to it
+
+
+---
 
 -   date 23 Sep 2020 
 

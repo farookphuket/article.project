@@ -32,7 +32,7 @@ Route::delete('/home/{id}', 'HomeController@destroy')->name('home.destroy');
 Route::namespace("Member")->prefix("member")->name('member.')->middleware('can:member-user')->group(function(){
     
     Route::resource("/home","HomeController");
-    Route::resource("/home/{id}/edit","HomeController@edit");
+    Route::get("/home/{id}/edit","HomeController@edit");
     Route::post("/home/store","HomeController@store");
     Route::put("/home/{id}/update","HomeController@update");
     Route::delete("/home/{id}","HomeController@destroy");
@@ -53,19 +53,26 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:admi
     Route::post('/users/{id}/update','UsersController@update');
 
     Route::resource('/pages','PagesController');
+    Route::get('/pages/{id}','PagesController@edit');
+    Route::post('/pages/{id}/update','PagesController@update');
+    Route::delete('/pages/{id}','PagesController@destroy');
+
 });
 
 Route::namespace('Moderate')->prefix('moderate')->name('moderate.')->middleware('can:mod-user')->group(function(){
 
     Route::resource('/home','HomeController');
-    Route::resource('/home/{id}/edit','HomeController@edit');
-    Route::resource('/home/{id}','HomeController@destroy');
-    Route::resource('/whatnews','WhatNewsController');
+    Route::resource('/home/{home}/edit','HomeController@edit');
+    Route::delete('/home/{id}','HomeController@destroy');
 
+
+    Route::resource('/whatnews','WhatNewsController');
     Route::post('/whatnews','WhatNewsController@store');
+
     Route::resource('/users','UsersController');
-    Route::resource('/users/{id}/edit','UsersController@edit');
+    Route::resource('/users/{user}/edit','UsersController@edit');
     Route::post('/users/{id}/update','UsersController@update');
+    Route::delete('/users/{id}','UsersController@destroy');
 
 
 });

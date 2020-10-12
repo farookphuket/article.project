@@ -66,12 +66,12 @@ This page can only access by "Moderate" user only! by the power of Moderate you 
                 </td>
                 <td>
                     <div class="btn-group">
-                        <a href="{{route('moderate.users.edit',$user->id)}}" class="btn btn-primary">
+                        <a href="{{url('moderate/users/',$user->id)}}" class="btn btn-primary">
                             Edit
                         </a>
 
                         @if(Auth::user()->id != $user->id)
-                        <form class="form" action="{{route('moderate.users.destroy',$user)}}" method="post">
+                            <form class="form" action="{{route('moderate.users.destroy',$user->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger" type="submit">Delete</button>

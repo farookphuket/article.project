@@ -33,7 +33,7 @@
 
     <!-- Start prism -->
 
-    <link href="{{asset("prism/prism.css")}}" rel="stylesheet">
+    <link href="{{asset("prism/prism-funky.css")}}" rel="stylesheet">
     <script type="text/javascript" src="{{asset("prism/prism.js")}}"></script>
 
     <!-- End prism -->
